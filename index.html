@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Camping Adventure</h1>
+    </header>
+
+    <section>
+        <h2>Plan Your Camping Trip</h2>
+        <p>
+            Get ready for an unforgettable camping experience in the great outdoors! Fill out the form below to start your adventure.
+        </p>
+
+        <form id="campingForm" action="#">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <input type="button" value="Book Now" onclick="displayInfo()">
+        </form>
+
+        <button id="displayBtn" onclick="displayInfo()">Display First and Last Name</button>
+    </section>
+
+    <section>
+        <h2>Campsite Information</h2>
+        <p>Explore our featured campsites and choose the perfect spot for your camping adventure.</p>
+
+        <table>
+            <tr>
+                <th>Campsite</th>
+                <th>Description</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>Lake View</td>
+                <td>Enjoy breathtaking views of the serene lake.</td>
+                <td>Nearby the lake</td>
+            </tr>
+            <tr>
+                <td>Forest Retreat</td>
+                <td>Experience the tranquility of the deep forest.</td>
+                <td>Surrounded by trees</td>
+            </tr>
+            <tr>
+                <td>Mountain Peak</td>
+                <td>Reach new heights and camp on a mountain peak.</td>
+                <td>At the summit</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Camping Adventure</p>
+    </footer>
+
+    <script>
+        function displayInfo() {
+            var firstName = document.getElementById("fname").value;
+            var lastName = document.getElementById("lname").value;
+
+            alert("First Name: " + firstName + "\nLast Name: " + lastName);
+
+            // Optionally, you can hide the form and show the display button after submitting
+            document.getElementById("campingForm").style.display = "none";
+            document.getElementById("displayBtn").style.display = "block";
+        }
+    </script>
+</body>
+</html>

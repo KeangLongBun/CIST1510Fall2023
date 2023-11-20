@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Adventure</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form input[type="button"] {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        form input[type="button"]:hover {
+            background-color: #2980b9;
+        }
+
+        button#displayBtn {
+            display: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Styles for the image */
+        .camping-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Camping Adventure</h1>
+    </header>
+
+    <!-- Use a free camping-related image from Unsplash -->
+    <img class="camping-image" src="https://source.unsplash.com/1200x400/?camping" alt="Camping Adventure Image">
+
+    <section>
+        <h2>Plan Your Camping Trip</h2>
+        <p>
+            Get ready for an unforgettable camping experience in the great outdoors! Fill out the form below to start your adventure.
+        </p>
+
+        <form id="campingForm" action="#">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <input type="button" value="Book Now" onclick="displayInfo()">
+        </form>
+
+        <button id="displayBtn" onclick="displayInfo()">Display First and Last Name</button>
+    </section>
+
+    <section>
+        <h2>Campsite Information</h2>
+        <p>Explore our featured campsites and choose the perfect spot for your camping adventure.</p>
+
+        <table>
+            <tr>
+                <th>Campsite</th>
+                <th>Description</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>Lake View</td>
+                <td>Enjoy breathtaking views of the serene lake.</td>
+                <td>Nearby the lake</td>
+            </tr>
+            <tr>
+                <td>Forest Retreat</td>
+                <td>Experience the tranquility of the deep forest.</td>
+                <td>Surrounded by trees</td>
+            </tr>
+            <tr>
+                <td>Mountain Peak</td>
+                <td>Reach new heights and camp on a mountain peak.</td>
+                <td>At the summit</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Camping Adventure</p>
+    </footer>
+
+    <script>
+        function displayInfo() {
+            var firstName = document.getElementById("fname").value;
+            var lastName = document.getElementById("lname").value;
+
+            alert("First Name: " + firstName + "\nLast Name: " + lastName);
+
+            // Optionally, you can hide the form and show the display button after submitting
+            document.getElementById("campingForm").style.display = "none";
+            document.getElementById("displayBtn").style.display = "block";
+        }
+    </script>
+</body>
+</html>
